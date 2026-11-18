@@ -56,7 +56,7 @@ describe("VPN City subscription flow", () => {
 
 	it("rejects an unknown plan", async () => {
 		const app = createVpnCity();
-		expect(app.buySubscription({ userId: 1, planId: "nope" })).rejects.toThrow(
+		await expect(app.buySubscription({ userId: 1, planId: "nope" })).rejects.toThrow(
 			"Plan not found",
 		);
 	});
@@ -65,7 +65,7 @@ describe("VPN City subscription flow", () => {
 		const app = createVpnCity();
 		const order = await app.buySubscription({ userId: 5, planId: "1m" });
 		await app.confirmPayment(order.invoice.id);
-		expect(app.confirmPayment(order.invoice.id)).rejects.toThrow(
+		await expect(app.confirmPayment(order.invoice.id)).rejects.toThrow(
 			"Invoice already paid",
 		);
 	});

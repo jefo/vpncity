@@ -1,0 +1,21 @@
+{
+  "name": "vpncity",
+  "version": "0.1.0",
+  "description": "VPN City: подписки, mock-биллинг и выдача конфига в Telegram",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "bun run src/index.ts",
+    "dev": "bun run --hot src/index.ts",
+    "test": "bun test",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@bot-machine/telegram-client": "^1.0.7",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5.9.2"
+  }
+}

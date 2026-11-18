@@ -1,0 +1,69 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>VPN City — case study</title><meta name="description" content="Тарифы, счёт в Telegram Stars, активация подписки и выдача конфига. Платёж демонстрационный, но домен, сценарий и тесты настоящие."><link rel="canonical" href="https://jefo.github.io/vpncity/"><meta property="og:title" content="VPN City — case study"><meta property="og:description" content="Тарифы, счёт в Telegram Stars, активация подписки и выдача конфига. Платёж демонстрационный, но домен, сценарий и тесты настоящие."><meta property="og:type" content="article"><meta name="theme-color" content="#faf9f5"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2315161c'/%3E%3Cpath d='M8 10h16v2H8zm0 5h10v2H8zm0 5h13v2H8z' fill='%23faf9f5'/%3E%3C/svg%3E"><link rel="stylesheet" href="./assets/global.Bl4itOlZ.css"></head><body style="--accent: var(--num)"><a class="skip" href="#content">К содержанию</a><header class="site-header"><div class="shell header-inner"><a class="header-mark" href="https://github.com/jefo">jefo / case studies</a><nav class="header-nav" aria-label="Внешние ссылки"><a href="https://github.com/jefo/vpncity">исходники</a><a href="https://github.com/jefo?tab=repositories">все репозитории</a></nav></div></header><div class="shell"><section class="hero" aria-labelledby="project-title"><div><h1 class="hero-title" id="project-title">VPN City</h1><p class="hero-lede">Тарифы, счёт в Telegram Stars, активация подписки и выдача конфига. Платёж демонстрационный, но домен, сценарий и тесты настоящие.</p><div class="hero-actions"><a class="button" href="https://github.com/jefo/vpncity">Открыть исходники</a><a class="button button-secondary" href="#run">Как запустить</a></div></div><div class="spec" aria-label="Краткие факты"><div class="spec-row"><span class="spec-label">Состояние</span><span class="spec-value is-info">прототип, 7 тестов</span></div><div class="spec-row"><span class="spec-label">Роль</span><span class="spec-value is-info">домен, сценарий, тесты</span></div><div class="spec-row"><span class="spec-label">Стек</span><span class="spec-value is-info">Bun · TypeScript · Zod · Telegram Bot API</span></div><div class="spec-row"><span class="spec-label">Код</span><span class="spec-value is-info">743 строки TS</span></div><div class="spec-row"><span class="spec-label">Тесты</span><span class="spec-value is-info">7 pass · 19 expect</span></div><div class="spec-row"><span class="spec-label">ID</span><span class="spec-value mono" style="font-size:13px">svc://vpncity</span></div></div></section><main class="main" id="content"><aside class="rail"><div class="rail-title">На этой странице</div><nav class="rail-nav" aria-label="Содержание"><a href="#dialog" data-rail="dialog">Диалог</a><a href="#screens" data-rail="screens">Экраны</a><a href="#capabilities" data-rail="capabilities">Что умеет</a><a href="#architecture" data-rail="architecture">Как устроено</a><a href="#data" data-rail="data">Ограничения</a><a href="#run" data-rail="run">Запуск</a><a href="#next" data-rail="next">Дальше</a></nav></aside><article class="article"><section class="section" id="dialog" data-section><h2 class="section-title">Диалог</h2><div class="terminal" aria-label="telegram / vpncity"><div class="terminal-head"><span>telegram / vpncity</span><span>long polling</span></div><div class="terminal-body"><div class="msg"><span class="msg-role user">user</span><p class="msg-text">/start</p></div><div class="msg"><span class="msg-role bot">bot</span><p class="msg-text">VPN City
+
+Подписка на VPN с оплатой в Telegram Stars.
+Тарифы, счёт и выдача конфига — в одном боте.</p></div><div class="msg"><span class="msg-role user">user</span><p class="msg-text">Купить VPN</p></div><div class="msg"><span class="msg-role bot">bot</span><p class="msg-text">Выберите тариф
+
+1 месяц — 50 ⭐
+6 месяцев — 250 ⭐
+1 год — 450 ⭐</p></div><div class="msg"><span class="msg-role user">user</span><p class="msg-text">Оплатить 250 ⭐</p></div><div class="msg"><span class="msg-role system">system</span><p class="msg-text">→ счёт создан → mock-платёж подтверждён → конфиг выдан</p></div><div class="msg-buttons" aria-label="Кнопки бота"><span class="msg-button">1 месяц — 50 ⭐</span><span class="msg-button">6 месяцев — 250 ⭐</span><span class="msg-button">1 год — 450 ⭐</span></div></div></div></section><section class="section" id="screens" data-section><h2 class="section-title">Экраны</h2><div class="shots"><figure class="shot"><img src="screens/vpncity/01.png" alt="Тарифы VPN City" width="840" height="1680"><figcaption><span class="shot-index">01</span>Тарифы</figcaption></figure><figure class="shot"><img src="screens/vpncity/02.png" alt="Карточка тарифа VPN City" width="840" height="1680"><figcaption><span class="shot-index">02</span>Тариф</figcaption></figure><figure class="shot"><img src="screens/vpncity/03.png" alt="Mock-счёт на оплату" width="840" height="1680"><figcaption><span class="shot-index">03</span>Счёт</figcaption></figure><figure class="shot"><img src="screens/vpncity/04.png" alt="Активная подписка VPN City" width="840" height="1680"><figcaption><span class="shot-index">04</span>Подписка</figcaption></figure></div></section><section class="section" id="capabilities" data-section><h2 class="section-title">Что умеет</h2><ul class="cap-list"><li>Три тарифа с ценой в Telegram Stars и сроком.</li><li>Счёт создаётся через отдельный payment gateway.</li><li>Подписка проходит статусы pending → active.</li><li>После оплаты выдаётся VPN-конфиг.</li><li>Статус показывает тариф, срок и остаток дней.</li><li>Домен, приложение и Telegram разделены портами.</li><li>7 тестов на покупку, оплату и статус.</li></ul></section><section class="section" id="architecture" data-section><h2 class="section-title">Как устроено</h2><div class="arch-grid"><div class="layers" aria-label="Слои"><div class="layer"><span class="layer-name">src/domain</span><span class="layer-detail">план, подписка, счёт, конфиг, пользователь</span></div><div class="layer"><span class="layer-name">src/app</span><span class="layer-detail">3 use case и порты хранилища/платежей/VPN</span></div><div class="layer"><span class="layer-name">src/infra</span><span class="layer-detail">in-memory store, mock payment, mock VPN</span></div><div class="layer"><span class="layer-name">src/telegram</span><span class="layer-detail">polling, меню, тарифы, счёт, статус</span></div></div><div><div class="code-head"><span>file tree</span><span>17 строк</span></div><pre class="code-block" aria-label="Структура проекта"><code><span class="tree-dir">src/</span>
+<span class="tree-dir">├── domain/</span>
+<span class="tree-file">│   ├── plans.ts</span>
+<span class="tree-file">│   ├── subscription.ts</span>
+<span class="tree-file">│   ├── payment.ts</span>
+<span class="tree-file">│   └── vpn-config.ts</span>
+<span class="tree-dir">├── app/</span>
+<span class="tree-file">│   ├── ports.ts</span>
+<span class="tree-file">│   └── use-cases.ts</span>
+<span class="tree-dir">├── infra/</span>
+<span class="tree-file">│   ├── in-memory-store.ts</span>
+<span class="tree-file">│   ├── mock-payment.ts</span>
+<span class="tree-file">│   ├── mock-vpn.ts</span>
+<span class="tree-file">│   └── composition.ts</span>
+<span class="tree-dir">└── telegram/</span>
+<span class="tree-file">    ├── bot.ts</span>
+<span class="tree-file">    └── views.ts</span></code></pre></div></div></section><section class="section" id="data" data-section><h2 class="section-title">Что реально, а что mock</h2><p class="section-lede">Ниже — фактическое состояние проекта. Всё, что помечено как mock или отсутствует, не выдаётся за готовую функцию.</p><table class="limits"><thead><tr><th scope="col">Пункт</th><th scope="col">Состояние</th></tr></thead><tbody><tr><td>Оплата</td><td><span class="chip chip-warn">mock</span> mock, без Telegram Payments</td></tr><tr><td>База</td><td><span class="chip chip-info">ограничение</span> in-memory, сбрасывается при перезапуске</td></tr><tr><td>Конфиг</td><td><span class="chip chip-warn">mock</span> mock, не рабочий VPN-сервер</td></tr><tr><td>Продление</td><td><span class="chip chip-err">нет</span> нет отдельного сценария</td></tr><tr><td>Подписка</td><td><span class="chip chip-info">ограничение</span> одна активная на пользователя</td></tr></tbody></table><div class="note"><strong>Как читать таблицу.</strong> «Не готово» — реализации нет в репозитории. «Ограничение» — функция есть, но работает в узких рамках. Это проверяется по README и коду.</div></section><section class="section" id="run" data-section><h2 class="section-title">Запуск</h2><div class="arch-grid"><div><div class="code-head"><span>.env</span><button class="copy" type="button" data-copy="BOT_TOKEN=123456:AA...">копировать</button></div><pre class="code-block" aria-label="Переменные окружения"><code><span class="key">BOT_TOKEN</span>=<span class="str">123456:AA...</span></code></pre></div><div><div class="code-head"><span>terminal</span><button class="copy" type="button" data-copy="bun install
+cp .env.example .env
+bun run start">копировать</button></div><pre class="code-block" aria-label="Команды запуска"><code><span class="cmd">bun install</span>
+<span class="cmd">cp .env.example .env</span>
+<span class="cmd">bun run start</span></code></pre></div></div></section><section class="section" id="next" data-section><h2 class="section-title">Что дальше</h2><ol class="steps"><li>Telegram Payments / Stars с реальным провайдером.</li><li>Postgres для пользователей, счетов и подписок.</li><li>Генерация WireGuard/OpenVPN-конфига на сервере.</li><li>Продление и отзыв доступа по окончании срока.</li><li>Вебхук для платежей и идемпотентность.</li></ol></section></article></main></div><footer class="site-footer"><div class="shell"><div class="footer-grid"><div><h2 class="footer-title">Другие проекты</h2><p class="footer-copy">Семь отдельных репозиториев. У каждого — свой README и эта страница. Исходники открыты, демо-данные помечены.</p></div><nav class="footer-links" aria-label="Другие проекты"><a href="https://jefo.github.io/computer-master-bot/"><span>Computer Master Bot</span><span>↗</span></a><a href="https://jefo.github.io/esim-telegram-bot/"><span>eSIM Telegram Bot</span><span>↗</span></a><a href="https://jefo.github.io/sales-report-bot/"><span>Sales Report Bot</span><span>↗</span></a><a href="https://jefo.github.io/prof-tinder-bot/"><span>Prof Tinder Bot</span><span>↗</span></a><a href="https://jefo.github.io/vpn-sales-bot/"><span>VPN Sales Bot</span><span>↗</span></a><a href="https://jefo.github.io/booking-domain/"><span>Booking Domain</span><span>↗</span></a></nav></div><div class="footer-bottom"><span>VPN City · case study · 2026</span><span><a href="https://github.com/jefo/vpncity">github.com/jefo/vpncity</a></span></div></div></footer><script>
+      const railLinks = [...document.querySelectorAll('[data-rail]')];
+      const sections = railLinks
+        .map((link) => document.getElementById(link.dataset.rail))
+        .filter(Boolean);
+
+      if ('IntersectionObserver' in window && sections.length) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            const visible = entries
+              .filter((entry) => entry.isIntersecting)
+              .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+            if (!visible) return;
+            for (const link of railLinks) {
+              if (link.dataset.rail === visible.target.id) {
+                link.setAttribute('aria-current', 'true');
+              } else {
+                link.removeAttribute('aria-current');
+              }
+            }
+          },
+          { rootMargin: '-18% 0px -62% 0px', threshold: [0, 0.1, 0.5] }
+        );
+        sections.forEach((section) => observer.observe(section));
+      }
+
+      for (const button of document.querySelectorAll('[data-copy]')) {
+        button.addEventListener('click', async () => {
+          try {
+            await navigator.clipboard.writeText(button.dataset.copy || '');
+            button.textContent = 'скопировано';
+            button.dataset.copied = 'true';
+            setTimeout(() => {
+              button.textContent = 'копировать';
+              delete button.dataset.copied;
+            }, 1600);
+          } catch {
+            button.textContent = 'выделите вручную';
+          }
+        });
+      }
+    </script></body></html>
